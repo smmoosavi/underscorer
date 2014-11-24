@@ -1,48 +1,48 @@
-underscorer
+Underscorer
 ===========
 
-**underscorer** really is functioner :smile: and chainer :smirk:
+**Underscorer** is a functioner :smile: and chainer :smirk: for underscore
 
 What is the meaning of underscorer?
 -----------------------------------
 
-first you must understand meaning of *functioner* and *chainer*.
+First you must understand the meaning of *functioner* and *chainer*.
 
-You know action of `er` postfix in english words. for example [worker](http://dictionary.reference.com/browse/worker) is: 
-> a person or thing that works
+As you know, the `er` suffix in English can be used to describe the subject who performs a task, e.g. employer for the person who employs.
+Similarly, the *functioner* is the one who creates a function and *chainer* chains them together like functional languages.
 
-So *functioner* is a function that create function. and *chainer* is a function that prepare chaining.
+**Underscorer** is a functioner and chainer for [underscore](http://underscorejs.org/)
 
-**underscorer** is functioner for [underscore](http://underscorejs.org/)
+## install
 
-Booting
--------
+```
+npm install underscorer
+```
 
-### node
+## Usage
+
+### Node.js
 
 ```js
 var _r = require('underscorer');
 ```
 
-### browser
+### Browser
 
 ```html
 <script src="underscore.js"></script>
 <script src="underscorer.js"></script>
 ```
 
-global `_r` or `underscorer`
-
-### usage
-#### functioning
-We now [`_.last`](http://underscorejs.org/#last) function return last item of passed array
+### Functioning
+In underscore, the [`_.last`](http://underscorejs.org/#last) function returns the last item of passed array
 
 ```js
 _.last([3, 4, 1, 5]); // 5
 ```
 
-So **underscorer** has `_r.laster` (`last` + `er`) function that return function that calc last item of array. because
- underscorer is *functioner*.
+**Underscorer** replaces it by `_r.laster` (`last` + `er`) function. It creates a function which whenever called, returns
+the last item of array. Because underscorer is a *functioner*.
  
 ```js
 var fn = _r.laster()
@@ -50,28 +50,29 @@ fn([3, 4, 1, 5]); // 5
 fn([5, 2, 6, 1]); // 1
 ```
 
-#### chaining
-suppose you want calculate sum of square of values of last item of list.
+### Chaining
+Suppose that you want to calculate the sum of squares of values which are stored in the last item of another list.
 
 ```js
 var l = [{a: 1, b: 4}, {a: 3}, {a: 3, c: 4}];
 _.reduce(_.map(_.values(_.last(l)),function (i) {return i * i;}),function(a, b){ return a + b});
 ```
 
-**underscorer** not only *functioner* but also is *chainer*. It means that you can chain functions.
+The **underscorer** isn't just a simple *functioner* but also a *chainer*. That is, you can chain functions together.
 
 ```js
 var fn = _r
     .laster()
     .valueser()
-    .maper(function (i) { return i * i; })        // I know, but this is map + er
-    .reduceer(function (a, b) { return a + b; });
+    .maper(function (i) { return i * i; })        // maper!? I know :D
+                                                  // ... but this is map + er
+    .reduceer(function (a, b) { return a + b; }); 
 
 fn([{a: 1, b: 4}, {a: 3}, {a: 3, c: 4}]);         // 25
 fn([{i: 1, j: 8}, {k: 1, l: 2}]);                 // 5
 ```
 
-You can fork chains
+Obtained functions can be reused anywhere. Call them multiple times or use them within other chains.
 
 ```js
 var fnBase = _r
@@ -91,9 +92,11 @@ fnPow2([{i: 1, j: 2}, {k: 5}, {k: 3, l: 2}]); // [ 9, 4 ]
 fnPow3([{i: 1, j: 2}, {k: 5}, {k: 3, l: 2}]); // [ 27, 8 ]
 ```
 
-#### underscorer as a function
+### Underscorer as a function
 
-Like as underscore you can pass input first
+Underscore support object-oriented style of coding too. It allows passing the list/object/iteratee as an underscore
+object and so saves passing it to the `last`, `values`, etc. in the functional style. 
+Similarly, the underscorer gets the list argument using `_r` function.
 
 ```
 // underscore
@@ -114,4 +117,6 @@ fn.maper(function(i){return i * i * i})();        // [ 125, 216 ]
 API
 ---
 
-All [function of underscore](http://underscorejs.org/) by `er` postfix. for example: `laster`, `firster`, `sampleer`, `sortByer`
+All [functions of underscore](http://underscorejs.org/) + `er` suffix :)
+
+For example: `laster`, `firster`, `sampleer`, and `sortByer`.
