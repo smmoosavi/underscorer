@@ -1,0 +1,29 @@
+{
+  "name": "underscorer",
+  "version": "1.0.0",
+  "description": "underscorer really is functioner and chainer",
+  "main": "underscorer.js",
+  "scripts": {
+      "test": "jshint underscorer.js",
+      "build": "uglifyjs underscorer.js -c \"evaluate=false\" --comments \"/    .*/\" -m --source-map underscorer.min.map -o underscorer.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smmoosavi/underscorer.git"
+  },
+  "keywords": [
+    "underscorer",
+    "underscore",
+    "functional",
+    "chaining"
+  ],
+  "author": "smmoosavi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smmoosavi/underscorer/issues"
+  },
+  "homepage": "https://github.com/smmoosavi/underscorer",
+  "dependencies": {
+    "underscore": "^1.7.0"
+  }
+}
