@@ -111,3 +111,7 @@ var fn = _r([[2, 4], [4, 5], [5, 6]]).laster();   // function
 fn.maper(function(i){return i * i})();            // [ 25, 36 ]
 fn.maper(function(i){return i * i * i})();        // [ 125, 216 ]
 ```
+API
+---
+
+All [function of underscore](http://underscorejs.org/) by `er` postfix. for example: `laster`, `firster`, `sampleer`, `sortByer`

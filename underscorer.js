@@ -41,5 +41,6 @@
         return ofn;
     };
     _r = erfy(_r, false);
+    _r.VERSION = '1.0.0';
     return _r;
 });
