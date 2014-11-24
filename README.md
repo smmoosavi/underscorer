@@ -13,10 +13,10 @@ Similarly, the *functioner* is the one who creates a function and *chainer* chai
 
 **Underscorer** is a functioner and chainer for [underscore](http://underscorejs.org/)
 
-## install
+## Install
 
 ```
-npm install underscorer
+$ npm install underscorer
 ```
 
 ## Usage
