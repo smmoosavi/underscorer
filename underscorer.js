@@ -16,15 +16,15 @@
             }
             ifn[k + 'er'] = function () {
                 var args = _.toArray(arguments);
+                args.unshift(null);
                 var ofn;
                 ofn = function (i) {
-                    var fnArgs = args.slice();
                     if (memory) {
-                        fnArgs.unshift(ifn(i));
+                        args[0] = ifn(i);
                     } else {
-                        fnArgs.unshift(i);
+                        args[0] = i;
                     }
-                    return _[k].apply(_, fnArgs);
+                    return _[k].apply(_, args);
                 };
                 erfy(ofn, true);
                 return ofn;
@@ -41,6 +41,6 @@
         return ofn;
     };
     _r = erfy(_r, false);
-    _r.VERSION = '1.0.0';
+    _r.VERSION = '1.0.1';
     return _r;
 });
