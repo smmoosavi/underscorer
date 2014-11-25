@@ -1,11 +1,11 @@
 {
   "name": "underscorer",
-  "version": "1.0.1-beta1",
+  "version": "1.0.1",
   "description": "underscorer really is functioner and chainer",
   "main": "underscorer.js",
   "scripts": {
-      "test": "jshint underscorer.js",
-      "build": "uglifyjs underscorer.js -c \"evaluate=false\" --comments \"/    .*/\" -m --source-map underscorer.min.map -o underscorer.min.js"
+    "test": "jshint underscorer.js",
+    "build": "uglifyjs underscorer.js -c \"evaluate=false\" --comments \"/    .*/\" -m --source-map underscorer.min.map -o underscorer.min.js"
   },
   "repository": {
     "type": "git",
