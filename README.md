@@ -119,4 +119,16 @@ API
 
 All [functions of underscore](http://underscorejs.org/) + `er` suffix :)
 
-For example: `laster`, `firster`, `sampleer`, and `sortByer`.
+For example: `laster`, `firster`, `sampleer`, and `sortByer`. And Functions that supported 
+in underscore chain: `poper`, `pusher`, `reverseer`, `shifter`, `sorter`, `spliceer`, `unshifter`, `concater`, `joiner`
+, and `sliceer`.
+
+**Note**: underscore `extend`, `default`, `pop`, `push`, `reverse`, `shift`, `sort`, `splice`, `unshift` functions
+  are mutable. Similarly underscorer.
+  
+```js
+var x = [1, 2, 3];
+var y = _r(x).pusher(4)(); // mutable
+x               // [1, 2, 3, 4]
+x === y         // true
+```

@@ -9,6 +9,8 @@
         root._r = root.underscorer = factory(_);
     }
 })(this, function (_) {
+    var ArrayProto = Array.prototype;
+
     function erfy(fn, memory) {
         fn.memory = memory;
         if (Object.setPrototypeOf) {
@@ -27,27 +29,65 @@
 
     function erProto(underscore) {
         var proto = {};
-        _.keys(underscore).forEach(function (k) {
-            if (!_.isFunction(underscore[k])) {
+        _.keys(underscore).forEach(function (name) {
+            if (!_.isFunction(underscore[name])) {
                 return;
             }
-            proto[k + 'er'] = function () {
+            proto[name + 'er'] = function () {
                 var ifn = this;
                 var args = _.toArray(arguments);
                 args.unshift(null);
-                var ofn;
-                ofn = function (i) {
+                var ofn = function (i) {
                     if (ifn.memory) {
                         args[0] = ifn(i);
                     } else {
                         args[0] = i;
                     }
-                    return underscore[k].apply(underscore, args);
+                    return underscore[name].apply(underscore, args);
                 };
                 erfy(ofn, true);
                 return ofn;
             };
         });
+
+
+        _.each(['pop', 'push', 'reverse', 'shift', 'sort', 'splice', 'unshift'], function (name) {
+            proto[name + 'er'] = function () {
+                var ifn = this;
+                var args = _.toArray(arguments);
+                var ofn = function (i) {
+                    var obj = null;
+                    if (ifn.memory) {
+                        obj = ifn(i);
+                    } else {
+                        obj = i;
+                    }
+                    ArrayProto[name].apply(obj, args);
+                    return obj;
+                };
+                erfy(ofn, true);
+                return ofn;
+            };
+
+        });
+        _.each(['concat', 'join', 'slice'], function (name) {
+            proto[name + 'er'] = function () {
+                var ifn = this;
+                var args = _.toArray(arguments);
+                var ofn = function (i) {
+                    var obj = null;
+                    if (ifn.memory) {
+                        obj = ifn(i);
+                    } else {
+                        obj = i;
+                    }
+                    return ArrayProto[name].apply(obj, args);
+                };
+                erfy(ofn, true);
+                return ofn;
+            };
+        });
+
         return proto;
     }
 
@@ -64,6 +104,6 @@
         return ofn;
     };
     erfy(_r, false);
-    _r.VERSION = '1.0.2';
+    _r.VERSION = '1.0.3';
     return _r;
 });
