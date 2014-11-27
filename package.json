@@ -1,7 +1,7 @@
 {
   "name": "underscorer",
   "version": "1.0.2",
-  "description": "underscorer really is functioner and chainer",
+  "description": "Underscorer is a functioner and chainer for underscore",
   "main": "underscorer.js",
   "scripts": {
     "test": "jshint underscorer.js",

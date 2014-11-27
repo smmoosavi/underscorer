@@ -1,0 +1,24 @@
+{
+  "name": "underscorer",
+  "main": "underscorer.js",
+  "version": "1.0.2",
+  "authors": [
+    "smmoosavi"
+  ],
+  "description": "Underscorer is a functioner and chainer for underscore",
+  "keywords": [
+    "underscorer",
+    "underscore",
+    "functional",
+    "chaining"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/smmoosavi/underscorer",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
