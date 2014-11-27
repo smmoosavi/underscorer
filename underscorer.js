@@ -9,29 +9,52 @@
         root._r = root.underscorer = factory(_);
     }
 })(this, function (_) {
-    function erfy(ifn, memory) {
-        _.keys(_).forEach(function (k) {
-            if (!_.isFunction(_[k])) {
+    function erfy(fn, memory) {
+        fn.memory = memory;
+        if (Object.setPrototypeOf) {
+            Object.setPrototypeOf(fn, extenderProto);
+            return fn;
+        }
+        if (({}).__proto__ !== undefined) {
+            fn.__proto__ = extenderProto;
+            return fn;
+        }
+        _.each(protoKeys, function (k) {
+            fn[k] = proto[k];
+        });
+        return fn;
+    }
+
+    function erProto(underscore) {
+        var proto = {};
+        _.keys(underscore).forEach(function (k) {
+            if (!_.isFunction(underscore[k])) {
                 return;
             }
-            ifn[k + 'er'] = function () {
+            proto[k + 'er'] = function () {
+                var ifn = this;
                 var args = _.toArray(arguments);
                 args.unshift(null);
                 var ofn;
                 ofn = function (i) {
-                    if (memory) {
+                    if (ifn.memory) {
                         args[0] = ifn(i);
                     } else {
                         args[0] = i;
                     }
-                    return _[k].apply(_, args);
+                    return underscore[k].apply(underscore, args);
                 };
                 erfy(ofn, true);
                 return ofn;
             };
         });
-        return ifn;
+        return proto;
     }
+
+    var proto = erProto(_);
+    var protoKeys = _.keys(proto);
+    var extenderProto = {};
+    _.extend(extenderProto, proto, Function.prototype);
 
     var _r = function (l) {
         var ofn = function () {
@@ -40,7 +63,7 @@
         erfy(ofn, true);
         return ofn;
     };
-    _r = erfy(_r, false);
-    _r.VERSION = '1.0.1';
+    erfy(_r, false);
+    _r.VERSION = '1.0.2';
     return _r;
 });
