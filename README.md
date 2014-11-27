@@ -1,6 +1,12 @@
 Underscorer
 ===========
 
+[![npm version][npm:version]][npm]
+[![bower version][bower:version]][github]
+[![Dependencies][dependencies]][david-dm]
+[![Downloads][npm:download]][npm]
+
+
 **Underscorer** is a functioner :smile: and chainer :smirk: for underscore
 
 What is the meaning of underscorer?
@@ -132,3 +138,11 @@ var y = _r(x).pusher(4)(); // mutable
 x               // [1, 2, 3, 4]
 x === y         // true
 ```
+
+[npm]: https://www.npmjs.org/package/underscorer "npm"
+[github]: https://github.com/smmoosavi/underscorer "github"
+[npm:version]: http://img.shields.io/npm/v/underscorer.svg "version"
+[bower:version]: http://img.shields.io/bower/v/underscorer.svg "version"
+[npm:download]: http://img.shields.io/npm/dm/underscorer.svg "Download"
+[dependencies]: https://david-dm.org/smmoosavi/underscorer.png "Dependencies"
+[david-dm]: https://david-dm.org/smmoosavi/underscorer "Dependencies"
