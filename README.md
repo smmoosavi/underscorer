@@ -25,6 +25,10 @@ Similarly, the *functioner* is the one who creates a function and *chainer* chai
 $ npm install underscorer
 ```
 
+## Benchmarks
+
+You can see [Benchmarks](http://smmoosavi.github.io/underscorer/benchmarks/)
+
 ## Usage
 
 ### Node.js
