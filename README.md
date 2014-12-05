@@ -1,12 +1,11 @@
 Underscorer
 ===========
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/smmoosavi/underscorer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![npm version][npm:version]][npm]
 [![bower version][bower:version]][github]
 [![Dependencies][dependencies]][david-dm]
 [![Downloads][npm:download]][npm]
-
+[![Gitter](https://badges.gitter.im/Join Chat.svg)][gitter]
 
 **Underscorer** is a functioner :smile: and chainer :smirk: for underscore
 
@@ -145,6 +144,7 @@ x === y         // true
 ```
 
 [npm]: https://www.npmjs.org/package/underscorer "npm"
+[gitter]: https://gitter.im/smmoosavi/underscorer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge "Gitter"
 [github]: https://github.com/smmoosavi/underscorer "github"
 [npm:version]: http://img.shields.io/npm/v/underscorer.svg "version"
 [bower:version]: http://img.shields.io/bower/v/underscorer.svg "version"
