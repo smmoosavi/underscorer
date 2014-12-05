@@ -1,5 +1,6 @@
 Underscorer
 ===========
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/smmoosavi/underscorer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![npm version][npm:version]][npm]
 [![bower version][bower:version]][github]
