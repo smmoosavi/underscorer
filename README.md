@@ -23,6 +23,8 @@ Similarly, the *functioner* is the one who creates a function and *chainer* chai
 
 ```
 $ npm install underscorer
+$ bower install underscorer
+$ meteor add underscorer
 ```
 
 ## Benchmarks
