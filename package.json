@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/smmoosavi/underscorer",
   "dependencies": {
-    "underscore": "^1.7.0"
+    "underscore": "^1.8.3"
   }
 }

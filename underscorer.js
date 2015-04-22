@@ -104,6 +104,6 @@
         return ofn;
     };
     erfy(_r, false);
-    _r.VERSION = '1.0.3';
+    _r.VERSION = '1.0.4';
     return _r;
 });

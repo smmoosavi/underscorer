@@ -1,6 +1,6 @@
 Package.describe({
   name: 'smmoosavi:underscorer',
-  version: '1.0.3',
+  version: '1.0.4',
   summary: 'Underscorer is a functioner and chainer for underscore',
   git: 'https://github.com/smmoosavi/underscorer.git',
   documentation: 'README.md'
