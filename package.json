@@ -1,6 +1,6 @@
 {
   "name": "underscorer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Underscorer is a functioner and chainer for underscore",
   "main": "underscorer.js",
   "scripts": {
